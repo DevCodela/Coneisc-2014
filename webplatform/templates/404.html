@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+
+    <div class="alert alert-danger fade in">
+      <h4 class="text-center">Lamentamos este mensaje, no pudimos encontrar lo que busca.</h4>
+      <p class="text-center">Si tienes problemas contáctate con el administrador del sistema.</p>
+      <p class="text-center">
+        <a href="{% url 'login' %}" class="btn btn-danger">Log In</a>
+      </p>
+    </div>
+
+{% endblock content %}

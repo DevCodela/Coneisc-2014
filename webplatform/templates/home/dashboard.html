@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    {% include "home/dashboard_navbar.html" %}
+
+    <div id="main-region" class="container">
+
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Enrolled Courses</div>
+                    <table class="table">
+                        {% if enrolled_courses %}
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th class="text-left">Title</th>
+                            </tr>
+                        </thead>
+                        {% endif %}
+                        <tbody>
+                            {% for course in enrolled_courses %}
+                                <tr>
+                                    <td class="text-center">{{ forloop.counter }}</td>
+                                    <td>
+                                        <a href="{% url 'courses:detail_course' course.slug %}">{{ course.title }}</a>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr><td class="text-center" colspan="2">No Courses!</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Available Courses</div>
+                    <table class="table">
+                        {% if enrolled_courses %}
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th class="text-left">Title</th>
+                                <th class="text-left"></th>
+                            </tr>
+                        </thead>
+                        {% endif %}
+                        <tbody>
+                            {% for course in available_courses %}
+                                <tr>
+                                    <td class="text-center">{{ forloop.counter }}</td>
+                                    <td>{{ course.title }}</td>
+                                    <td>
+                                        <form action="{% url 'home:enroll' %}" method="POST">{% csrf_token %}
+                                            <input type="hidden" name="course" value="{{ course.slug }}" />
+                                            <input type="submit" class="btn btn-success btn-xs" value="Sign Up now!" />
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr><td class="text-center" colspan="2">No Courses Availables!</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- col-md-6 -->
+
+        </div><!-- row -->
+
+        <!--<p class="lead">Here is static content in the web page. You'll notice that it gets replaced by our app as soon as we start it.</p>-->
+    </div>
+
+{% endblock %}

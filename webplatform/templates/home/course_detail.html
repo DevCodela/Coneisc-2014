@@ -1,0 +1,70 @@
+{% extends "home/course_detail_base.html" %}
+
+
+{% block content %}
+    
+    {% include "home/dashboard_navbar.html" %}
+
+    <div class="container main-region">
+
+        <div class="row ">
+            
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center"><strong>{{ course.title }}</strong></div>
+                    <ul class="list-group menu-js">
+                        <li class="list-group-item">
+                            <a href="{% url 'home:home' %}">
+                                <i class="glyphicon glyphicon-home"></i> My courses
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{% url 'courses:detail_course' course.slug %}#chapters" class="chapters-link-js">
+                                <i class="glyphicon glyphicon-play-circle"></i> Chapters
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{% url 'courses:detail_course' course.slug %}#articles" class="articles-link-js">
+                                <i class="glyphicon glyphicon-file"></i> Articles
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- col-md-2 -->
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">List of Chapters or Articles availables</div>
+                    <ul class="list-group items-js">
+                        <li class="list-group-item">Click en Chapter or Articles.</li>
+                    </ul>
+                </div>
+            </div><!-- col-md-4 -->
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading title-item-js">Title of Chapter or Article</div>
+                    <div class="panel-body content-item-js">
+                        
+                        <p>Click en Chapter or Articles menu.</p>
+
+                    </div>
+                </div>
+            </div><!-- col-md-6 -->
+
+        </div><!-- row -->
+
+    </div><!-- main-region -->
+
+{% endblock %}
+
+
+{% block javascript %}
+{% autoescape off %}
+<script>
+    window.datos = {};
+    window.datos.chapters = {{ chapters }};
+    window.datos.articles = {{ articles }};
+</script>
+{% endautoescape %}
+{% endblock javascript %}

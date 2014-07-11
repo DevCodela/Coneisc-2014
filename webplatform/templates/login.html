@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    {% include "home/home_navbar.html" %}
+
+    <div id="main-region" class="container">
+
+        <div class="row">
+            
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Login</div>
+                    <div class="panel-body">
+                    
+                        <form action="{% url "login" %}" method="POST">{% csrf_token %}
+                        {{ form.errors }}
+
+                            <div class="row">
+                                <div class="col-xs-6 col-xs-offset-3">
+                                    <div class="form-group">
+                                        <input type="text" name="username" class="form-control" placeholder="username" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" placeholder="Password" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                    <input type="hidden" name="next" value="{{ next }}" />
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div><!-- col-md-6 -->
+
+        </div><!-- row -->
+
+    </div>
+
+{% endblock %}

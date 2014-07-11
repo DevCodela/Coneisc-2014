@@ -1,0 +1,30 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Web Platform &alpha; - {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}" />
+
+    <link rel="stylesheet" href="{% static "css/webplatform.css" %}" />
+</head>
+<body>
+
+{% block content %}{% endblock %}
+
+{% block js_templates %}{% endblock js_templates %}
+
+{% block js_dependencias %}{% endblock js_dependencias %}
+
+{% block javascript %}{% endblock javascript %}
+
+{% block js_app %}{% endblock js_app %}
+    
+</body>
+</html>
+
+
+

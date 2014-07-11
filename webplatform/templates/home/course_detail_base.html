@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block js_templates %}
+
+<script type="text/template" id="chapter-template" >
+
+    <div class="alert alert-success" role="alert">
+        <%- dato.summary %>
+    </div>
+
+    <% if(dato.kind == 'chapter'){ %>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe 
+            class="embed-responsive-item" 
+            width="600" 
+            height="450" 
+            src="<%- dato.video %>" 
+            frameborder="0" 
+            allowfullscreen
+            >
+        </iframe>
+    </div>
+    <% }else{ %>
+        <%= dato.content %>
+    <% } %>
+
+</script>
+
+<script type="text/template" id="items-template" >
+<% if(!_.isEmpty(datos)) { %>
+    <% _.each(datos, function(chapter) { %>
+        <li class="list-group-item">
+            <a href="#" class="item-js" data-kind="<%- chapter.kind %>" data-slug="<%- chapter.slug %>">
+                <%- chapter.title %>
+            </a>
+        </li>
+    <% }); %>
+<% } else { %>
+    <li class="list-group-item">I'm sorry. No items available.</li>
+<% } %>
+</script>
+
+{% endblock js_templates %}
+
+{% block js_dependencias %}
+
+<script src="{% static "js/vendor/jquery.js" %}"></script>
+<script src="{% static "js/vendor/csrf.js" %}"></script>
+<script src="{% static "js/vendor/underscore.js" %}"></script>
+<script src="{% static "js/vendor/backbone.js" %}"></script>
+<!-- <script src="{% static "js/vendor/bootstrap.js" %}"></script> -->
+
+{% endblock js_dependencias %}
+
+{% block js_app %}
+<script src="{% static "js/app.js" %}"></script>
+{% endblock js_app %}

@@ -1,0 +1,185 @@
+[
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "claudia", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-06-12T00:13:01.682Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$pO96kn0yIOtR$tcmH+5wwk32/hx1XTmzjq72JUjxBI88cA1WKXQ5+QN8=", 
+        "email": ""
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "sofia", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-06-12T00:13:08.945Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$pQqtd7FdE636$lMLHAado1lHksgNQdP0VtdAiJ5a6BJ3rjqbPUUm2kyQ=", 
+        "email": ""
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "jair", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-06-12T00:13:16.320Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$DDgypljW11IN$mYFbsn75VerbJimNBzegUqx1nyzodY9KQLaztyhIwVQ=", 
+        "email": ""
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "mathias", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-06-12T00:13:23.465Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$0OG993DakanF$/Ce0ifVIYOXPD6gKTSqk6ru5EeD5kGCAGuTQ3KS55Fg=", 
+        "email": ""
+    }
+},
+{
+    "pk": 6, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "victor", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-06-12T00:13:31.484Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$ObI3kyq08dQ2$SiZwa/i6kHdMbVU0GKZh+XAeR61EOeX/5FOSShgM8PA=", 
+        "email": ""
+    }
+},
+{
+    "pk": 1, 
+    "model": "courses.course", 
+    "fields": {
+        "updated": "2014-06-12T00:13:55.893Z", 
+        "title": "Curso profesional de Django", 
+        "deleted": false, 
+        "created": "2014-06-12T00:13:55.893Z", 
+        "summary": "\u00bfTe gustar\u00eda desarrollar con Django un proyecto real? Te presentamos este completo curso donde aprender\u00e1s desde cero hasta un nivel avanzado.", 
+        "isfree": false,
+        "released": true, 
+        "slug": "curso-profesional-de-django"
+    }
+},
+{
+    "pk": 2, 
+    "model": "courses.course", 
+    "fields": {
+        "updated": "2014-06-12T00:14:17.659Z", 
+        "title": "Curso b\u00e1sico de Backbone.js", 
+        "deleted": false, 
+        "created": "2014-06-12T00:14:17.659Z", 
+        "summary": "Este curso b\u00e1sico de Backbone.js nos ayudar\u00e1 a conocer los conceptos necesarios para comenzar a utilizar esta potente librer\u00eda.", 
+        "isfree": false,
+        "released": true, 
+        "slug": "curso-basico-de-backbonejs"
+    }
+},
+{
+    "pk": 3, 
+    "model": "courses.course", 
+    "fields": {
+        "updated": "2014-06-12T00:14:49.816Z", 
+        "title": "Introducci\u00f3n a Backbone.js", 
+        "deleted": false, 
+        "created": "2014-06-12T00:14:49.816Z", 
+        "summary": "Este es el primer capitulo del curso de Backbone.js y tocaremos temas relacionados a como trabaja esta libreria y porque debemos utilizarlo en nuestras aplicaciones.", 
+        "isfree": false,
+        "released": false, 
+        "slug": "introduccion-a-backbonejs"
+    }
+},
+{
+    "pk": 1, 
+    "model": "courses.userenrolled", 
+    "fields": {
+        "course": 1, 
+        "user": 2
+    }
+},
+{
+    "pk": 2, 
+    "model": "courses.userenrolled", 
+    "fields": {
+        "course": 1, 
+        "user": 4
+    }
+},
+{
+    "pk": 3, 
+    "model": "courses.userenrolled", 
+    "fields": {
+        "course": 1, 
+        "user": 5
+    }
+},
+{
+    "pk": 4, 
+    "model": "courses.userenrolled", 
+    "fields": {
+        "course": 2, 
+        "user": 6
+    }
+},
+{
+    "pk": 5, 
+    "model": "courses.userenrolled", 
+    "fields": {
+        "course": 2, 
+        "user": 3
+    }
+},
+{
+    "pk": 6, 
+    "model": "courses.userenrolled", 
+    "fields": {
+        "course": 3, 
+        "user": 3
+    }
+},
+{
+    "pk": 7, 
+    "model": "courses.userenrolled", 
+    "fields": {
+        "course": 3, 
+        "user": 2
+    }
+}
+]
